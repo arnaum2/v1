@@ -11,7 +11,7 @@ CREATE TABLE jugador(
 
 CREATE TABLE Partida (
 	identificador INTEGER PRIMARY KEY NOT NULL,
-	fecha VARCHAR(9),
+	fecha DATETIME,
 )ENGINE = InnoDB;
 
 CREATE TABLE Participacion (
@@ -30,11 +30,11 @@ INSERT INTO jugador(Code,Username,password) VALUES(4,'Donald Trump','macarrronsp
 INSERT INTO jugador(Code,Username,password) VALUES(5,'ELJOseleete','12341234password');
 
 
-INSERT INTO Partida(identificador,fecha,duracion,ganador) VALUES(1,'12/23/22','15:43','00:20:43','ajudan');
-INSERT INTO Partida(identificador,fecha,duracion,ganador) VALUES(2,'12/23/22','23:32','00:43:32','ajudan');
-INSERT INTO Partida(identificador,fecha,duracion,ganador) VALUES(3,'12/11/22','12:55','01:32:34','MichaelJackson');
-INSERT INTO Partida(identificador,fecha,duracion,ganador) VALUES(4,'21/07/22','06:06','00:12:32','Donald Trump');
-INSERT INTO Partida(identificador,fecha,duracion,ganador) VALUES(5,'22/12/22','13:22','00:34:10','MichaelJackson');
+INSERT INTO Partida(identificador,fecha,duracion,ganador) VALUES(1,'12-23-22','15:43','00:20:43','ajudan');
+INSERT INTO Partida(identificador,fecha,duracion,ganador) VALUES(2,'12-23-22','23:32','00:43:32','ajudan');
+INSERT INTO Partida(identificador,fecha,duracion,ganador) VALUES(3,'12-11-22','12:55','01:32:34','MichaelJackson');
+INSERT INTO Partida(identificador,fecha,duracion,ganador) VALUES(4,'21-07-22','06:06','00:12:32','Donald Trump');
+INSERT INTO Partida(identificador,fecha,duracion,ganador) VALUES(5,'22-12-22','13:22','00:34:10','MichaelJackson');
 
 
 INSERT INTO Participacion VALUES('MichaelJackson',1,1);

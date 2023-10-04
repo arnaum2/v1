@@ -21,23 +21,22 @@ void main(){
 		exit(1);
 	}
 
-	err=mysql_query(conn,"SELECT * FROM jugador);
+	err=mysql_query(conn,"SELECT Jugador.Nombre,Partida.fecha FROM Partida,Participacion,Jugador WHERE Jugador.Username='%s' and Participacion.Jugador=Jugador.Username and Participacion.Posicion='1');
 	if(err!=0){
 		printf("Error al consultar datos de la base: %u %s\n", mysql_errno(conn),mysql_error(conn));
 		exit(1);
-	}
-	resultado=mysql_store_result(conn);
-	row=mysql_fetch_row(resultado);
-	rows=SELECT COUNT(*) FROM jugador;
-	int i=0;
-	maxid=0;
-	maxganadas=0;
-	for(i=0;i<rows,i++){
-		if(row[i]<row[i+1]){
-			maxid=row[i+1];
-			maxganadas=row[i+1];
-		}row=mysql_fetch_row(resultado);
-	}
+	}else{
+		resultado=mysql_store_result(conn);
+		if(resultado==NULL){
+		printf("No se han encontrado");
+		}else{
+			row=mysql_fetch_row(resultado);
+			while(row!=NULL){
+				printf("Nombre: %s, Fechag: %s\n", row[0], row[1]);
+				row=mysql_fetch_row(resultado);
+			}
+		}	
+	
 	}
 
 
